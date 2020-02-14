@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "Skynet",
+    "description": "Parse all pages for skylinks and download them through your favorite Skynet portal.",
+    "version": "0.1",
+    "minimum_chrome_version": "16.0.884",
+    "browser_action": {
+        "default_title": "Download skylinks from Skynet",
+        "default_icon": "assets/icon48.png",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": true
+    },
+    "icons": {
+        "16": "assets/icon16.png",
+        "48": "assets/icon48.png",
+        "128": "assets/icon128.png"
+    },
+    "permissions": [
+        "<all_urls>",
+        "downloads",
+        "webRequest",
+        "storage",
+        "notifications",
+        "tabs",
+        "http://*/",
+        "https://*/"
+    ]
+}
