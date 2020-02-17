@@ -18,7 +18,9 @@ srcElementTags.forEach(tag => {
 })
 
 isSkylink = (str) => {
+    const regex = RegExp('[a-zA-Z0-9_-]{46}');
     return str && (
+        regex.test(str) ||
         str.startsWith('sia://') ||
         str.startsWith('https://siasky.net/') ||
         str.startsWith('https://sialoop.net/') ||
@@ -31,13 +33,16 @@ isSkylink = (str) => {
 }
 
 skylinks = skylinks.map(element => {
-    console.log(element)
-    return isSkylink(element.src)
-        ? element.src
-        : isSkylink(element.href)
-            ? element.href
-            : null
-
+    if (isSkylink(element.src)) {
+        return element.src
+    }
+    if (isSkylink(element.href)) {
+        return element.href
+    }
+    if (isSkylink(element.getAttribute('href'))) {
+        return element.getAttribute('href')
+    }
+    return null
 })
 skylinks = skylinks.filter(Boolean)
 chrome.runtime.sendMessage({ sender: 'skynet', skylinks });
