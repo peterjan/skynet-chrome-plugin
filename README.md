@@ -8,4 +8,4 @@ top right. After you've done this you will be able to load this extension as an
 "unpacked extension".
 
 ## Demo video
-https://siasky.net/AACueMTBqZqFpK45lh6qLDxQTUI3s99Bb0jIzjZzO5hCsw
+https://siasky.net/AACVu6-5F6z19xlY_afQnKQpCs1-TP7m02vFCq-SUqpNtQ
