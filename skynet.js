@@ -18,8 +18,8 @@ srcElementTags.forEach(tag => {
 })
 
 isSkylink = (str) => {
-    const regex = RegExp('[a-zA-Z0-9_-]{46}');
-    return str && (
+    const regex = RegExp('^(?:sia:\/\/|)([a-zA-Z0-9_-]{46})$');
+    const skylink = str && (
         regex.test(str) ||
         str.startsWith('sia://') ||
         str.startsWith('https://siasky.net/') ||
@@ -30,6 +30,7 @@ isSkylink = (str) => {
         str.startsWith('https://vault.lightspeedhosting.com/') ||
         str.startsWith('https://skydrain.net/')
     )
+    return skylink
 }
 
 skylinks = skylinks.map(element => {
